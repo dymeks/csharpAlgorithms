@@ -4,12 +4,14 @@ namespace algorithms
 {
     class Program
     {
+        //Prints numbers from 1 to 255.
         public static void Print1To255(){
             for(int i  = 1; i <= 255; i++){
                 Console.WriteLine(i);
             }
         }
 
+        //Prints the cumaltive sum from 0 to 255.
         public static void PrintIntSum(){
             int sum = 0;
             for(int i = 0; i <= 255; i++){
@@ -19,6 +21,8 @@ namespace algorithms
             }
         }
 
+        //Takes an integer array.
+        //Prints the maximum value in the array.
         public static void PrintMax(int[] arr){
             int max = arr[0];
 
@@ -31,6 +35,8 @@ namespace algorithms
             Console.Write(max);
         }
 
+        //Creates a list of odd numbers from 1 to 255.
+        //Returns an ArrayList.
         public static ArrayList OddArray(){
             ArrayList result = new ArrayList();
             for(int i = 1; i<= 255; i++){
@@ -42,6 +48,8 @@ namespace algorithms
             return result;
         }
 
+        //Takes a number and an array of numbers.
+        //Prints how many numbers are greater than y.
         public static void GreaterThanY(int[] arr, int y) {
             int count = 0;
             foreach(int num in arr){
@@ -53,6 +61,9 @@ namespace algorithms
             Console.WriteLine(count);
         }
 
+        //Takes an integer array.
+        //Prints the Max, Min and the Average value in the 
+        //array.
         public static void PrintMaxMinAvg(int[] arr){
             int max = arr[0];
             int min = arr[0];
@@ -74,6 +85,9 @@ namespace algorithms
             System.Console.WriteLine("Average is: " + average);
         }
 
+        //Takes an array of Integers
+        //Swaps all negative numbers in the array with the word "Dojo".
+        //Returns an array of Objects with Strings and numbers.
         public static Object[] SwapStringForNegatives(int[] arr){
             Object[] result = new Object[arr.Length];
 
@@ -89,6 +103,7 @@ namespace algorithms
             return result;
         }
 
+        //Prints all odd numbers from 1 to 255.
         public static void Print1To255Odd(){
             for(int i = 1; i<=255; i++){
                 if(i %2 == 1){
@@ -97,12 +112,16 @@ namespace algorithms
             }
         }
 
+        //Takes an integer array.
+        //Prints every element in the array.
         public static void PrintArrayVals(int[] arr){
             foreach(int num in arr){
                 System.Console.WriteLine(num);
             }
         }
 
+        //Takes an integer array.
+        //Prints the average value in the array.
         public static void PrintAverage(int[] arr){
             int sum = 0;
 
@@ -113,6 +132,9 @@ namespace algorithms
            System.Console.WriteLine(sum/arr.Length);
         }
 
+        //Takes an integer array.
+        //Replaces all the values in the array with their squares.
+        //Returns the original array.
         public static int[] SquareValues(int[] arr){
             for(int i = 0; i < arr.Length; i++){
                 arr[i] = arr[i]*arr[i];
@@ -122,6 +144,9 @@ namespace algorithms
             return arr;
         }
 
+        //Takes an integer array.
+        //replaces all negative numbers in the array with 0.
+        //Returns the original array.
         public static int[] ZeroOutNegatives(int[] arr){
             for(int i = 0; i < arr.Length; i++){
                 if(arr[i] < 0){
@@ -132,6 +157,9 @@ namespace algorithms
             return arr;
         }
 
+        //Takes an array of Integers.
+        //Shifts all the values in the array to the left.
+        //Once the shifting is done, the last space becomes 0.
         public static int[] ShiftValuesLeft(int[] arr){
             
             for(int i = 1; i< arr.Length; i++){
@@ -142,9 +170,27 @@ namespace algorithms
             return arr;
         }
 
+        //Takes an array of Integers.
+        //Prints out each number.
         public static void PrintArray(int[] arr){
             foreach(int num in arr){
                 System.Console.WriteLine(num);
+            }
+        }
+
+        //Prints out n steps. 
+        //Steps start in the top left corner.
+        public static void PrintSteps(int n){
+            for(int i = 0; i < n; i++){
+                string row = "";
+                for(int col = 0; col < n; col++){
+                    if(col <= i){
+                        row += "#";
+                    } else {
+                        row += " ";
+                    }
+                }
+                System.Console.WriteLine(row);
             }
         }
         static void Main(string[] args)
@@ -152,7 +198,7 @@ namespace algorithms
             Console.WriteLine("Hello World!");
             // Print1To255();
             // PrintIntSum ();
-            int[] test = new int[] {1,4,-9,5,4};
+            // int[] test = new int[] {1,4,-9,5,4};
             // PrintMax(test);
             // OddArray();
             // GreaterThanY(test,2);
@@ -164,6 +210,7 @@ namespace algorithms
             // SquareValues(test);
             // ZeroOutNegatives(test);
             // ShiftValuesLeft(test);
+            PrintSteps(5);
         }
     }
 }

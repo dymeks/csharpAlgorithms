@@ -193,6 +193,22 @@ namespace algorithms
                 System.Console.WriteLine(row);
             }
         }
+
+        public static void PrintPyramids(int n){
+            int midpoint = (2*n -1)/2;
+            
+            for(int row = 0; row < n; row++){
+                string level = "";
+                for(int col = 0; col < 2*n -1; col++){
+                    if(midpoint - row <= col && midpoint + row >= col){
+                        level += "#";
+                    } else {
+                        level += " ";
+                    }
+                }
+                System.Console.WriteLine(level);
+            }
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
@@ -210,7 +226,8 @@ namespace algorithms
             // SquareValues(test);
             // ZeroOutNegatives(test);
             // ShiftValuesLeft(test);
-            PrintSteps(5);
+            // PrintSteps(5);
+            PrintPyramids(10);
         }
     }
 }

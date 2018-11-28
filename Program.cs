@@ -209,6 +209,23 @@ namespace algorithms
                 System.Console.WriteLine(level);
             }
         }
+
+        
+
+        public static int ReverseNumber(int n){
+            string num = "" + Math.Abs(n);
+            string reversed = "";
+            
+            for(int i = (num.Length -1); i >= 0; i--){
+                reversed += num[i].ToString();
+            }
+
+            if(n < 0){
+                reversed = "-" + reversed;
+            }
+           
+            return Int32.Parse(reversed);
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
@@ -227,7 +244,9 @@ namespace algorithms
             // ZeroOutNegatives(test);
             // ShiftValuesLeft(test);
             // PrintSteps(5);
-            PrintPyramids(10);
+            // PrintPyramids(10);
+           
+            System.Console.WriteLine(ReverseNumber(-12300));
         }
     }
 }

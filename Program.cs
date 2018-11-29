@@ -226,6 +226,48 @@ namespace algorithms
            
             return Int32.Parse(reversed);
         }
+
+        public static void FizzBuzz(int n){
+            if(n % 3 == 0 && n % 5 == 0){
+                System.Console.WriteLine("fizzbuzz");
+            } else if ( n % 3 == 0){
+                System.Console.WriteLine("fizz");
+            } else if( n % 5 == 0){
+                System.Console.WriteLine("buzz");
+            } else {
+                System.Console.WriteLine(n);
+            }
+        }
+
+        //Iterative solution to Fibonacci sequence.
+        //Time complexity O(n)
+        public static int iFib(int n){
+            if(n == 0 || n == 1){
+                return n;
+            }
+
+            int first = 0;
+            int second = 1;
+
+            for(int i = 2; i <= n; i++){
+                int temp = first;
+                first = second;
+                second = temp + first;
+            }
+
+            return second;
+        }
+
+        //Recursive Solution to Fibonacci sequence.
+        //Returns the number in the Fibonacci sequence.
+        //Time Complexity O(2^n). Exponential time.
+        public static int rFib(int n){
+            if(n < 2){
+                return n;
+            }
+
+            return rFib(n-1) + rFib(n-2);
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
@@ -245,8 +287,10 @@ namespace algorithms
             // ShiftValuesLeft(test);
             // PrintSteps(5);
             // PrintPyramids(10);
-           
-            System.Console.WriteLine(ReverseNumber(-12300));
+            // FizzBuzz(15);
+            // System.Console.WriteLine(iFib(9));
+            // System.Console.WriteLine(rFib(9));
+            // System.Console.WriteLine(ReverseNumber(-12300));
         }
     }
 }

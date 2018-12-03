@@ -291,6 +291,13 @@ namespace algorithms
             // System.Console.WriteLine(iFib(9));
             // System.Console.WriteLine(rFib(9));
             // System.Console.WriteLine(ReverseNumber(-12300));
+            // Stack1 s = new Stack1();
+            // s.add("hi");
+            // s.add(23);
+            // object temp = s.remove();
+            // System.Console.WriteLine(temp);
+            // System.Console.WriteLine(s.peek());
+
         }
     }
 }

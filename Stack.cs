@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Collections;
 
 namespace algorithms {
-    class Stack1 {
-        public ArrayList data { get; set; }
-        public Stack1(){
-            this.data = new ArrayList();
+    class GenericStack1<T> {
+        public List<T> data { get; set; }
+        public GenericStack1(){
+            this.data = new List<T>();
         }
 
-        public void add(object o){
-            this.data.Add(o);
+        public void add(T input){
+            this.data.Add(input);
         }
 
-        public object remove(){
+        public T remove(){
             var temp = this.data[this.data.Count -1];
             this.data.RemoveAt(this.data.Count - 1);
             return temp;
         }
 
-        public object peek(){
+        public T peek(){
             return this.data[this.data.Count -1];
         }
     }

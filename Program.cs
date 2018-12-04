@@ -291,12 +291,15 @@ namespace algorithms
             // System.Console.WriteLine(iFib(9));
             // System.Console.WriteLine(rFib(9));
             // System.Console.WriteLine(ReverseNumber(-12300));
-            // Stack1 s = new Stack1();
-            // s.add("hi");
-            // s.add(23);
-            // object temp = s.remove();
-            // System.Console.WriteLine(temp);
-            // System.Console.WriteLine(s.peek());
+            GenericStack1<string> s = new GenericStack1<string>();
+            s.add("hi");
+            s.add("hello");
+            GenericStack1<int> s2 = new GenericStack1<int>();
+            s2.add(23);
+            string temp = s.remove();
+            System.Console.WriteLine(temp);
+            System.Console.WriteLine(s.peek());
+            System.Console.WriteLine(s2.peek());
 
         }
     }

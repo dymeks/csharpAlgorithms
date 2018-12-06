@@ -308,6 +308,8 @@ namespace algorithms
             s.Add("george");
             System.Console.WriteLine(s.head.data);
             System.Console.WriteLine(s.head.next.data);
+            s.RemoveLast();
+            System.Console.WriteLine(s.Size());
             
 
         }

@@ -50,7 +50,7 @@ namespace algorithms {
             this.head = this.head.next;
         }
 
-        public void RemoveLast (){
+        public MyNode<T> RemoveLast (){
             MyNode<T> current = this.head;
             MyNode<T> temp = this.head;
             if(this.head != null){
@@ -61,16 +61,74 @@ namespace algorithms {
                         current = current.next;
                     }
 
-                    temp = current;
+                    temp = current.next;
                     current.next = null;
                 }
 
                 
             }
             
+            return temp;  
+        }
 
+        public void InsertLast (T data){
+            MyNode<T> current = this.head;
+            MyNode<T> newData = new MyNode<T>(data);
+
+            if(this.head != null){
+                if(this.head.next == null){
+                    this.head.next = newData;
+                } else {
+                    while(current.next.next != null){
+                        current = current.next;
+                    }
+
+                    current.next = newData;
+                }
+
+                
+            } 
+        }
+
+        public MyNode<T> GetAt(int index){
+            int count = 1;
+            MyNode<T> current = this.head;
+
+            while(count < index && current != null){
+                current = current.next;
+                count++;
+            }
+
+            return current;
+
+        }
+
+        public void RemoveAt(int index){
+            
+            if(this.head != null){
+                MyNode<T> beforeRemove = this.GetAt(index -1);
+                if(index == 0){
+                    RemoveFirst();
+                } else if(beforeRemove != null && beforeRemove.next != null){
+                    beforeRemove.next = beforeRemove.next.next;
+                } 
+                
+            }
             
         }
 
+        public override string ToString(){
+            MyNode<T> current = this.head;
+            string result = ""; 
+            while(current != null){
+                result += current.data + ", ";
+                current = current.next;
+            }
+
+            return result;
+        }
+
     }
+
+
 }

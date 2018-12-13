@@ -306,9 +306,14 @@ namespace algorithms
             MyLinkedList<string> s = new MyLinkedList<string>();
             s.Add("Hi there");
             s.Add("george");
-            System.Console.WriteLine(s.head.data);
-            System.Console.WriteLine(s.head.next.data);
-            s.RemoveLast();
+            s.Add("there you go");
+            s.Add("fuve");
+            s.Add("hi ya!");
+            // System.Console.WriteLine(s.head.data);
+            // System.Console.WriteLine(s.head.next.data);
+            System.Console.WriteLine(s.ToString());
+            s.RemoveAt(4);
+            System.Console.WriteLine(s.ToString()); 
             System.Console.WriteLine(s.Size());
             
 
